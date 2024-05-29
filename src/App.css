@@ -22,6 +22,8 @@ body{
 }
 
 .totalScore{
+  /* display: flex;
+  flex-direction: column; */
   font-size: 60px;
   color: gold;
   margin-top: 150px;
@@ -72,4 +74,42 @@ body{
 
 .read-the-docs {
   color: #888;
+}
+
+/* App.css */
+
+/* Add styles for the cashout button */
+.cashout-button {
+  background-color: #4caf50; /* Greenish color */
+  color: white;
+  padding: 5px 5px; /* Decreased padding for height */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 50%;
+  height: 2.5em;
+  
+  
+}
+
+.cashout-button:hover {
+  background-color: #45a049; /* Darker shade on hover */
+}
+.start-button {
+  background-color: #4caf50; /* Greenish color */
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.start-button:hover {
+  background-color: #45a049; /* Darker shade on hover */
+}
+.gg{
+  display: flex;
+  gap: 100px;
 }

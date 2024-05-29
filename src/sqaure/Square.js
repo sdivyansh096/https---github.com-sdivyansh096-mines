@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import hoverEffect from "../Assests/Sound/hover.wav";
 import diamondEffect from "../Assests/Sound/gold.wav";
 import goldIcon from "../Assests/green.png";
 import bombicon from "../Assests/bomb.png";
@@ -7,6 +6,7 @@ import "./Square.css";
 
 function Square({ mine, setGameOver, gameOver, setScore }) {
   const [image, setImage] = useState(null);
+  const [clicked, setClicked] = useState(false);
 
   useEffect(() => {
     if (gameOver === true) {
@@ -26,18 +26,20 @@ function Square({ mine, setGameOver, gameOver, setScore }) {
   }
 
   function clickHandler() {
-    if (gameOver) return;
+    if (gameOver || clicked) return;
+
+    setClicked(true);
 
     if (!mine) {
       setScore((prevValue) => {
-        return prevValue * 1.3;
+        return prevValue * 1.15;
       });
       setImage(goldIcon);
       const sound = new Audio(diamondEffect);
       sound.play();
     } else {
       setScore(0);
-      alert("You Loose the Game");
+      alert("You Lose the Game");
       setGameOver(true);
     }
   }
